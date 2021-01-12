@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Customer Registration Page</title>
+</head>
+<body>
+
+    <h1>Customer Registation Form</h1>
+
+<div>
+  <form action="" method="get" onsubmit="getdata();return false;">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="email">Email ID</label>
+    <input type="text" id="email" name="email" placeholder="Your email Id..">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Your password..">
+
+    <label for="repassword">Retype Password</label>
+    <input type="password" id="repassword" name="password" placeholder="Retype password..">
+
+    <label for="gender">Gender</label>
+    <label class="container">Male
+        <input type="radio" name="radio" value="Male">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Female
+        <input type="radio" name="radio" value="Female">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">Prefer not to say
+        <input type="radio" name="radio" value="Others">
+        <span class="checkmark"></span>
+      </label>
+
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+        <option value="select">Select Your Country</option>
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+        <option value="india">INDIA</option>
+    </select>
+
+
+   
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+<div id="dvTable"></div>
+    
+</body>
+</html>
