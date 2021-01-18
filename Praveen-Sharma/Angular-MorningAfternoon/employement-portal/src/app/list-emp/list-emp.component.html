@@ -1,0 +1,37 @@
+<div class="container">
+    <div *ngIf="!users || numberOfUsers == 0"><h1>No Users Registered</h1></div>
+    <div *ngIf="users && numberOfUsers > 0">
+        <br/>
+        <div class="row">
+            <div>
+                <h1 style="text-align:center; color: cornflowerblue;">Registered Employees</h1>
+            </div>
+        </div>
+        <br/>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th id="id"><button class="btn btn-outline-primary"><strong>Emp Id</strong></button></th>
+                    <th id="name"><button class="btn btn-outline-primary"><strong>Name</strong></button></th>
+                    <th id="age"><button class="btn btn-outline-primary"><strong>Age</strong></button></th>
+                    <th id="dob"><button class="btn btn-outline-primary"><strong>DOB</strong></button></th>
+                    <th id="modify"><button class="btn btn-outline-primary" style="cursor:auto !important;"><strong>Modify</strong></button></th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr *ngFor = "let user of users">
+                    <td>{{ user['id'] }}</td>
+                    <td>{{ user['name'] }}</td>
+                    <td>{{ user['age'] }}</td>
+                    <td>{{ user['dob'] | date : "dd.MM.y" }}</td>
+                    <td>
+                        <a href="#" routerLink="/edit/{{user.id}}">
+                            <button class="btn btn-link">Edit</button>
+                        </a>/
+                        <button class="btn btn-link" (click)="deleteUser(user)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

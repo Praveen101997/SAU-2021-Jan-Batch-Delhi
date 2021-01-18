@@ -1,0 +1,29 @@
+<div class="container">
+    <br/>
+    <br/>
+    <h1 style="text-align:center; color: cornflowerblue;">Add New Employee Details</h1>
+    <br/>
+    <form action="" [formGroup]="addEmpForm" (ngSubmit)="addEmp()">
+        <div class="form-group">
+            <label for="id">Employement Id:</label>
+            <input type="number" id="id" class="form-control" formControlName="id" placeholder="Enter Employee Id">
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" class="form-control" formControlName="age" placeholder="Enter Age">
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" class="form-control" formControlName="dob" placeholder="Enter Date of Birth">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <button style= "text-align:center" class="btn btn-success" [disabled] = "!addEmpForm.valid">Submit</button>
+        </div>
+        
+    </form>
+</div>
