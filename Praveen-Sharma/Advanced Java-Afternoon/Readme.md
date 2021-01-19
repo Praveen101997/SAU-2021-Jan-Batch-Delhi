@@ -5,8 +5,8 @@
 
 ## Command to execute
 
-'''javac xmlparsing_merge_valid_invalid.java'''
+```javac xmlparsing_merge_valid_invalid.java```
 
-'''java xmlparsing_merge_valid_invalid'''
+```java xmlparsing_merge_valid_invalid```
 
 Output will save in same directory as merged_licenses.xml, valid_licenses.xml, invalid_licenses.xml files
