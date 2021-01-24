@@ -1,0 +1,126 @@
+.TodoContainer {
+  padding: 20px;
+}
+
+.Header {
+  color: red;
+  text-align:center;
+}
+
+.Header-Main{
+  color: red;
+  background-color: #333;
+  padding:30px;
+}
+
+.inputbar{
+  text-align: center;
+}
+
+
+
+.TaskRow:hover .hidden {
+  display: inline-block;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ol {
+  background: #ff9999;
+  padding: 20px;
+}
+
+ul {
+  background:#cce5ff;
+  padding: 20px;
+  margin-right: 35px;
+}
+
+ol li {
+  background: #ffe5e5;
+  padding: 5px;
+  margin-left: 35px;
+}
+
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+} */
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: #f02525;
+  padding: 10px 24px;
+  margin-left: 20px;
+}
+.button3 {
+  background-color: #259234;
+  padding: 10px 24px;
+}
+
+
+
+/* .close-icon:hover {background-color: #bbb;}
+
+.close-icon
+{
+  display:block;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  border-width:3px;
+  border-style: solid;
+  border-color:red;
+  border-radius:100%;
+  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
+  background-color:red;
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  margin-left: 100px;
+} */
+
+ul li{list-style-type:none;padding:0;margin:0}
+.hover-blue:hover{
+  color:#fff!important;
+  background-color:#2196F3!important
+}
+
+.w3-ul{list-style-type:none;padding:0;margin:0}.w3-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.w3-ul li:last-child{border-bottom:none}
+
+
+
+.hidden {
+  display: none;
+}
