@@ -1,0 +1,93 @@
+
+<div class="content" role="main">
+
+
+  <div>
+    <div>
+      <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)='authAdmin_()' > Admin </button>
+      <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)='authUser_()'>Existing User</button>
+      <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)='viewUserPanel_()'>Add New User</button>
+    </div>
+  </div>
+
+
+
+  <div *ngIf='showAdminInput'>
+    <div>
+      <input style="padding: 10px; margin:20px" type="text" [(ngModel)]='admID' width="100%" placeholder="Id" >
+      <input style="padding: 10px; margin:20px" type="password" [(ngModel)]='admPwd' width="100%" placeholder="Pwd" >
+    </div>
+    <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)="authAdmin()" >Authenticate</button>
+</div>
+
+<!-- Add New User -->
+
+<div *ngIf='addUserPanel'>
+  <div>
+    <input style="padding: 10px; margin:20px" type="text" [(ngModel)]='uName' placeholder="uName" >
+    <input style="padding: 10px; margin:20px" type="number" [(ngModel)]='accNo' placeholder="Acc. No." >
+  </div>
+  <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)='addUser()'>  Add User</button>
+  <p> {{addUserRtnMsg}} </p>
+</div>
+
+  <div *ngIf='adminPanelEnable'>
+    <div>
+      <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)="getAllTrans()">View All transaction</button>
+      <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)="getLglTrans()">View Legal transaction</button>
+      <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)="getIlgTrans()">View Illegal transaction</button>
+    </div>
+    <table>
+      <tr>
+        <th>Transaction No</th>
+        <th>Account Number</th>
+        <th>S. No</th>
+        <th>Is Legal</th>
+      </tr>
+      <tr *ngFor='let transaction of trans' style="text-align: center;border:1px solid black">
+        <td>{{transaction.transactionNumber}}</td>
+        <td>{{transaction.accountNumber}}</td>
+        <td>{{transaction.currencySerial}}</td>
+        <td>{{transaction.legal}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div *ngIf='userPanelEnable'>
+    <div>
+      <input style="padding: 10px; margin:20px" type="number" [(ngModel)]='accNo' width="100%" placeholder="Account Number" >
+    </div>
+    <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);"  (click)='loginUser()'>  Login User</button>
+
+    <div *ngIf='userFuncEnable'>
+      <p> Welcome {{uName}}</p>
+      <div>
+        <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)='ListTransactionPanel=false;addTransactionPanel=true' >Add Transaction</button>
+        <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);"(click)='ListTransactionPanel=true;addTransactionPanel=false;viewTrans()' >View All Transaction</button>
+      </div>
+    <div *ngIf="addTransactionPanel">
+      <input placeholder="Amount" style="padding: 10px; margin:20px" type="text" [(ngModel)]='amount'  >
+      <input placeholder="S. No." style="padding: 10px; margin:20px" type="text" [(ngModel)]='serialNo' >
+    <button style="padding:10px ;margin: 20px;background-color: rgb(189, 46, 27);" (click)='addTrans()'> Do Transaction</button>
+      <p style="align-items: center;">{{transactionMsg}}</p>
+    </div >
+    <div *ngIf="ListTransactionPanel">
+      <table>
+        <tr>
+          <th>Trans No. | </th>
+          <th>S. No. | </th>
+          <th>Is Legal</th>
+        </tr>
+        <tr *ngFor='let transaction of trans' style="text-align: center;border:1px solid black">
+          <td>{{transaction.transactionNumber}}</td>
+          <td>{{transaction.currencySerial}}</td>
+          <td>{{transaction.legal}}</td>
+        </tr>
+      </table>
+    </div >
+  </div>
+  </div>
+
+
+
+<router-outlet></router-outlet>
